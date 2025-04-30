@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
 import { feature } from 'topojson-client';
@@ -140,7 +139,10 @@ const WorldMap: React.FC = () => {
         const countryElement = document.getElementById(`country-${country.id}`);
         
         if (countryElement) {
-          const bbox = countryElement.getBBox();
+          // Fix: TypeScript error by using getBBox() on an SVG element, not an HTML element
+          const svgElement = countryElement as unknown as SVGGraphicsElement;
+          const bbox = svgElement.getBBox();
+          
           const labelX = country.labelPosition ? country.labelPosition[0] : bbox.x + bbox.width/2;
           const labelY = country.labelPosition ? country.labelPosition[1] : bbox.y + bbox.height/2;
           
