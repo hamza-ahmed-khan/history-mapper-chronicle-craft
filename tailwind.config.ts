@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Map specific colors
+				parchment: '#F5F0E6',
+				mapBorder: '#8E9196',
+				conqueredDefault: '#9b87f5',
+				conqueredHighlight: '#7E69AB',
+				unconquered: '#F1F0FB',
+				ocean: '#D3E4FD',
+				label: '#1A1F2C',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -70,25 +79,23 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'conquest-pulse': {
+					'0%': { opacity: '0.7', transform: 'scale(0.95)' },
+					'50%': { opacity: '1', transform: 'scale(1.05)' },
+					'100%': { opacity: '0.7', transform: 'scale(0.95)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'conquest-pulse': 'conquest-pulse 2s infinite'
 			}
 		}
 	},
