@@ -7,7 +7,7 @@ import { componentTagger } from "lovable-tagger";
 const repoName = 'your-repo-name';
 
 export default defineConfig(({ mode }) => ({
-  base: `history-mapper-chronicle-craft`, // 👈 Add this line
+  base: `/history-mapper-chronicle-craft/`, // 👈 Add this line
   server: {
     host: "::",
     port: 8080,
